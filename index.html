@@ -3,33 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Website</title>
-  <link rel="stylesheet" href="style.css">
+  <title>AGoH Archives</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    select {
+      background: #2c2c2c;
+      color: white;
+      padding: 10px;
+      border: 2px solid #4a90e2;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #4a90e2;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+
+    button:hover {
+      background: #357ab8;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>Powered by GitHub Pages 🚀</p>
-  </header>
+  <h1>AGoH Archives</h1>
+  <p>Select a version to download:</p>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! This is my free website hosted on GitHub Pages. I can edit these files to make it my own.</p>
-    </section>
+  <select id="versionSelector">
+    <option value="V1.00">V1.00</option>
+    <option value="V1.01">V1.01</option>
+    <option value="V1.02">V1.02</option>
+    <option value="V1.03">V1.03</option>
+  </select>
 
-    <section>
-      <h2>My Projects</h2>
-      <ul>
-        <li>✨ Project 1</li>
-        <li>🚀 Project 2</li>
-        <li>🎮 Project 3</li>
-      </ul>
-    </section>
-  </main>
+  <br>
+  <button onclick="downloadVersion()">Download</button>
 
-  <footer>
-    <p>Made with ❤️ using GitHub Pages</p>
-  </footer>
+  <script>
+    function downloadVersion() {
+      const version = document.getElementById("versionSelector").value;
+      const fileUrl = `downloads/${version}.zip`; // or .exe/.apk
+      window.location.href = fileUrl;
+    }
+  </script>
 </body>
 </html>
